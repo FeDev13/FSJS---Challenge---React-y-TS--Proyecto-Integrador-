@@ -1,15 +1,20 @@
 import NavBar from "../Components/NavBar";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import Faq from "../Components/Faq";
+import Slideshow from "../Components/Slideshow";
 
 export default function Home() {
   return (
     <div>
       <NavBar />
+      <Slideshow />
       <header style={{ paddingLeft: 0 }}>
         <div
           className="p-5 text-center bg-image"
           style={{
             backgroundImage:
-              "url('https://mdbootstrap.com/img/new/slides/041.webp')",
+              "url('https://www.musicavenue.com.cy/wp-content/uploads/2020/11/shop_photos_-11.jpg')",
             height: 400,
           }}
         >
@@ -19,15 +24,9 @@ export default function Home() {
           >
             <div className="d-flex justify-content-center align-items-center h-100">
               <div className="text-white">
-                <h1 className="mb-3">FAQ</h1>
-                <h4 className="mb-3">Preguntas</h4>
-                <a
-                  className="btn btn-outline-light btn-lg"
-                  href="#!"
-                  role="button"
-                >
-                  FAQ
-                </a>
+                <Link to="/Faq">
+                  <Button variant="contained">FAQ</Button>
+                </Link>
               </div>
             </div>
           </div>

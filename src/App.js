@@ -6,6 +6,8 @@ import Home from "./Pages/Home";
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
 import Carousel from "./Components/Carousel";
+import Faq from "./Components/Faq";
+import Slideshow from "./Components/Slideshow";
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/productos" exact component={Category} />
+          <Route path="/faq" exact component={Faq} />
         </Switch>
       </Router>
       <Footer />
