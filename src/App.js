@@ -8,9 +8,9 @@ import {
 import Category from "./Components/Category";
 import Home from "./Pages/Home";
 import Footer from "./Components/Footer";
-import Carousel from "./Components/Carousel";
-import Faq from "./Pages/Faq";
 import Nav from "./Components/Nav";
+import Faq from "./Pages/Faq";
+import Search from "./Components/Search";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Nav></Nav>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/productos" exact component={Category} />
+            <Route path="/productos" exact component={Search} />
             <Route path="/faq" exact component={Faq} />
           </Switch>
         </Router>

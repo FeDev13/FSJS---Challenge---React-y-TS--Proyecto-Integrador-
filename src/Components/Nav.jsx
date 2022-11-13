@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Nav.css";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import Categories from "./Categories";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Navbar = () => {

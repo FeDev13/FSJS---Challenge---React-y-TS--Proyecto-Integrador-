@@ -58,7 +58,7 @@ const Category = () => {
           <div className="col1">
             <div className="cards">
               {data.map((values) => {
-                const { title, price, image } = values;
+                const { title, price, image, details } = values;
                 return (
                   <>
                     <Card className="muicard">
@@ -104,6 +104,8 @@ const Category = () => {
                   <div className="popUpCard">
                     <p>Nombre: {pop.title}</p>
                     <p>Precio:{pop.price}</p>
+                    <p>Detalles: {pop.details}</p>
+                    <p>rating: {pop.rating}</p>
                   </div>
                 );
               })}
