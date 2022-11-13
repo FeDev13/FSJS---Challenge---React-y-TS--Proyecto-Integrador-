@@ -1,38 +1,22 @@
-import React from 'react';
-import {
-  MDBCarousel,
-  MDBCarouselItem,
-} from 'mdb-react-ui-kit';
+import React from "react";
+import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 
 export default function Carousel() {
   return (
-    <MDBCarousel showIndicators showControls fade>
+    <MDBCarousel showIndicators showControls fade className="carousel">
       <MDBCarouselItem
-        className='w-100 d-block'
+        className="w-100d-block"
         itemId={1}
-        src='https://www.musicstore.com/INTERSHOP/static/WFS/MusicStore-Site/MusicStoreShop/MusicStore-MusicStoreShop/en_US/static-pages/Abteilungsinfos/Header/EGIT_Header.jpg'
-        alt='...'
-      >
-        
-      </MDBCarouselItem>
+        src="https://media.blogto.com/articles/20180912-thetwelfthfret-07.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70"
+        alt="..."
+      ></MDBCarouselItem>
 
       <MDBCarouselItem
-        className='w-100 d-block'
-        itemId={2}
-        src='https://www.musicstore.com/INTERSHOP/static/WFS/MusicStore-Site/MusicStoreShop/MusicStore-MusicStoreShop/en_US/static-pages/Abteilungsinfos/Header/DJ_Header.jpg'
-        alt='...'
-      >
-        
-      </MDBCarouselItem>
-
-      <MDBCarouselItem
-        className='w-100 d-block'
+        className="w-100d-block"
         itemId={3}
-        src='https://upload.wikimedia.org/wikipedia/commons/c/c2/Music_Store_-_K%C3%B6ln-Kalk-5790.jpg'
-        alt='...'
-      >
-        
-      </MDBCarouselItem>
+        src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Music_Store_-_K%C3%B6ln-Kalk-5790.jpg"
+        alt="..."
+      ></MDBCarouselItem>
     </MDBCarousel>
   );
 }

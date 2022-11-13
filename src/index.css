@@ -1,17 +1,91 @@
 body {
-  background-color: #1976d2;
+  background-color: black;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Fredoka One', cursive,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.input{
+  display: flex;
+  margin: 2rem; 
 }
-.faq{
+.search{
+  margin: 0.5rem;
+}
+.carousel{
+  z-index: -1;
+}
+.faq, .faq1{
   color: white;
+  margin: 2rem;
+}
+
+.title {
+  margin-top: 4rem;
+  font-size: 1.5rem;
+}
+.title, .btn {
+  color: wheat;
+}
+.card {
+height: auto;
+}
+.titleProduct, .price {
+  color: bisque;
+  font-size: 1rem;
+}
+.col1{
+  
+  margin-bottom: 20rem;
+}
+.col{
+  display: block;
+}
+
+.card-body{
+  background-color: black;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+.muicard{
+    margin: 2rem;
+  }
+.muicontent{
+    background-color: rgb(50, 48, 48);
+  }
+.popUpContainer {
+    position: absolute;
+    top: 20rem;
+    left: 20rem;
+    right: 20rem;
+    left: 20rem;
+    border: thick;
+    margin: 6rem;
+    width: 30%;
+    height: auto;
+    background-color: transparent;
+    
+  }
+.popUpBody{
+    background-color: bisque;
+    width: 100%;
+    height: 70%;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 9px;
+  }
+.popUpFooter{
+    width: 100%;
+    text-align: right;
+  }
+.popUpCard {
+  font-size: 20px;
+}
+.logo{
+  width: auto;
+  height: 100%;
 }

@@ -39,6 +39,22 @@ const Categories = [
         price: 224.000,
         image: "https://d1aeri3ty3izns.cloudfront.net/media/61/617771/600/preview.jpg",
         rating: 3
+    },
+    {
+        id: 3,
+        category: "Acustica",
+        title: 'Guitarra Acutica Gibson',
+        price: 224.000,
+        image: "https://d1aeri3ty3izns.cloudfront.net/media/61/617771/600/preview.jpg",
+        rating: 3
+    },
+    {
+        id: 3,
+        category: "Electrica",
+        title: 'Guitarra Fender Telecaster',
+        price: 224.000,
+        image: "https://media.musiciansfriend.com/is/image/MMGS7/Player-Telecaster-Maple-Fingerboard-Electric-Guitar-3-Color-Sunburst/L21565000001000-00-500x500.jpg",
+        rating: 5
     }
 ]
 

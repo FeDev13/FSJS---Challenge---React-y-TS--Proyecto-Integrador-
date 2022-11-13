@@ -1,59 +1,144 @@
-import React from 'react'
-import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
-import Box from "@mui/material/Box"
-import Link from "@mui/material/Link"
+import React from "react";
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBIcon,
+  MDBInput,
+  MDBCol,
+  MDBRow,
+  MDBBtn,
+} from "mdb-react-ui-kit";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer>
-      <Box
-        px={{ xs: 3, sm: 10 }}
-        py={{ xs: 5, sm: 10 }}
-        bgcolor="text.secondary"
-        color="white"
-      >
-        <Container maxWidth="lg">
-          <Grid container spacing={5}>
-            <Grid item xs={12} sm={4}>
-              <Box borderBottom={1}>FAQ</Box>
-              <Box>
-                <Link href="/" color="inherit">
-                  Contacto
-                </Link>
-              </Box>
-              <Box>
-                <Link href="/" color="inherit">
-                  Soporte
-                </Link>
-              </Box>
-              <Box>
-                <Link href="/" color="inherit">
-                  Privacidad
-                </Link>
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <Box borderBottom={1}>Cuenta</Box>
-              <Box>
-                <Link href="/" color="inherit">
-                  Login
-                </Link>
-              </Box>
-              <Box>
-                <Link href="/" color="inherit">
-                  Registrarse
-                </Link>
-              </Box>
-            </Grid>
-          </Grid>
-          <Box textAlign="center" pt={{ xs: 5, sm: 10 }} pb={{ xs: 5, sm: 0 }}>
-            Material UI Workshop &reg; {new Date().getFullYear()}
-          </Box>
-        </Container>
-      </Box>
-    </footer>
-  )
-}
+    <MDBFooter className="text-center" color="white" backgroundcolor="dark">
+      <MDBContainer className="p-4">
+        <section className="mb-4">
+          <MDBBtn
+            outline
+            color="light"
+            floating
+            className="m-1"
+            href="#!"
+            role="button"
+          >
+            <MDBIcon fab icon="facebook-f" />
+          </MDBBtn>
 
-export default Footer
+          <MDBBtn
+            outline
+            color="light"
+            floating
+            className="m-1"
+            href="#!"
+            role="button"
+          >
+            <MDBIcon fab icon="twitter" />
+          </MDBBtn>
+
+          <MDBBtn
+            outline
+            color="light"
+            floating
+            className="m-1"
+            href="#!"
+            role="button"
+          >
+            <MDBIcon fab icon="google" />
+          </MDBBtn>
+
+          <MDBBtn
+            outline
+            color="light"
+            floating
+            className="m-1"
+            href="#!"
+            role="button"
+          >
+            <MDBIcon fab icon="instagram" />
+          </MDBBtn>
+
+          <MDBBtn
+            outline
+            color="light"
+            floating
+            className="m-1"
+            href="#!"
+            role="button"
+          >
+            <MDBIcon fab icon="linkedin-in" />
+          </MDBBtn>
+
+          <MDBBtn
+            outline
+            color="light"
+            floating
+            className="m-1"
+            href="#!"
+            role="button"
+          >
+            <MDBIcon fab icon="github" />
+          </MDBBtn>
+        </section>
+
+        <section className="">
+          <form action="">
+            <MDBRow className="d-flex justify-content-center">
+              <MDBCol size="auto">
+                <p className="pt-2">
+                  <strong>Suscribite a nuestro newsletter</strong>
+                </p>
+              </MDBCol>
+
+              <MDBCol md="5" start>
+                <MDBInput
+                  contrast
+                  type="email"
+                  label="Email"
+                  className="mb-4"
+                />
+              </MDBCol>
+
+              <MDBCol size="auto">
+                <MDBBtn outline color="light" type="submit" className="mb-4">
+                  Suscribite
+                </MDBBtn>
+              </MDBCol>
+            </MDBRow>
+          </form>
+        </section>
+
+        <section className="mb-4">
+          <p>Nuestros partners</p>
+        </section>
+
+        <section className="">
+          <MDBRow>
+            <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+              <h5 className="text-uppercase">Links</h5>
+            </MDBCol>
+
+            <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+              <h5 className="text-uppercase">Links</h5>
+            </MDBCol>
+
+            <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+              <h5 className="text-uppercase">Links</h5>
+            </MDBCol>
+
+            <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+              <h5 className="text-uppercase">Links</h5>
+            </MDBCol>
+          </MDBRow>
+        </section>
+      </MDBContainer>
+
+      <div className="text-center p-3" style={{ backgroundColor: "black" }}>
+        © 2020 Copyright:
+        <a className="text-white" href="https://mdbootstrap.com/">
+          MDBootstrap.com
+        </a>
+      </div>
+    </MDBFooter>
+  );
+}

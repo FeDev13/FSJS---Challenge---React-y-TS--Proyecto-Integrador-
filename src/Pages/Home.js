@@ -1,13 +1,12 @@
-import NavBar from "../Components/NavBar";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import Faq from "../Components/Faq";
+import Carousel from "../Components/Carousel";
 import Slideshow from "../Components/Slideshow";
 
 export default function Home() {
   return (
     <div>
-      <NavBar />
+      <Carousel />
       <Slideshow />
       <header style={{ paddingLeft: 0 }}>
         <div

@@ -1,59 +1,123 @@
-import React, { useState } from 'react'
-import Categories from './Categories'
+import React, { useState } from "react";
+import Categories from "./Categories";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Search from "@mui/icons-material/Search";
 
 const Category = () => {
+  const [data, setData] = useState(Categories);
 
-    const[data, setData] = useState(Categories);
+  const [popUpContent, setPopUpContent] = useState([]);
+  const [popupToggle, setPopUpToggle] = useState(false);
 
-    //Filtra por categoria 
+  const changeContent = (guitar) => {
+    setPopUpContent([guitar]);
+    setPopUpToggle(!popupToggle);
+  };
 
-    const filterResult = (catItem) => {
-        const result = Categories.filter((el) => {
-            return el.category === catItem;
-        });
-        setData(result);
-    }
+  //Filtra por categoria
+
+  const filterResult = (catItem) => {
+    const result = Categories.filter((el) => {
+      return el.category === catItem;
+    });
+    setData(result);
+  };
 
   return (
     <>
-      <div className="container">
-          <div className="row">
-              <div className="col">
-                  <h1 className='title'>Tienda Online</h1>
-              </div>
-          </div>
-          <div className="row">
-              <div className="col">
-                  <button className='btn' onClick={() => setData(Categories)}>Todas</button>
-                  <button className='btn' onClick={() => filterResult('Electrica')}>Electrica</button>
-                  <button className='btn' onClick={() => filterResult('Acustica')}>Acustica</button>
-                  <button className='btn' onClick={() => filterResult('Clasica')}>Clasica</button>
-              </div>
-              <div className="col">
-                    <div className="cards">
-                        {data.map((values) => {
-                            const{id, title, price, image} = values;
-                            return (
-                                <>
-                                    <div className="card" key={id}>
-                                        <div className="card-header">
-                                            <img src={image} alt={title} />
-                                        </div>
-                                        <div className="card-body">
-                                            <h2 className='titleProduct'>{title}</h2>
-                                            <span className="price">${price}</span>
-                                        </div>
-                                    </div>
-                                </>
-                            )
-                        })}
-                        
-                    </div>
-              </div>
-          </div>
+      <div className="input">
+        <input type="text" placeholder="Buscar" />
+        <Search className="search" />
       </div>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h1 className="title">Nuestros productos</h1>
+          </div>
+        </div>
+        <div className="filtro">
+          <div className="col">
+            <button className="btn" onClick={() => setData(Categories)}>
+              Todas
+            </button>
+            <button className="btn" onClick={() => filterResult("Electrica")}>
+              Electrica
+            </button>
+            <button className="btn" onClick={() => filterResult("Acustica")}>
+              Acustica
+            </button>
+            <button className="btn" onClick={() => filterResult("Clasica")}>
+              Clasica
+            </button>
+          </div>
+          <div className="col1">
+            <div className="cards">
+              {data.map((values) => {
+                const { title, price, image } = values;
+                return (
+                  <>
+                    <Card className="muicard">
+                      <CardMedia
+                        component="img"
+                        alt="green iguana"
+                        height="140"
+                        image={image}
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {title}
+                        </Typography>
+                        {price}
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                        ></Typography>
+                      </CardContent>
+                      <CardActions className="muicontent">
+                        <Button
+                          variant="contained"
+                          onClick={() => changeContent(values)}
+                        >
+                          Detalles
+                        </Button>
+                        <Button variant="contained">Comprar</Button>
+                      </CardActions>
+                    </Card>
+                  </>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+      {popupToggle && (
+        <div className="popUpContainer" onClick={changeContent}>
+          <div className="popUpBody">
+            <div className="popUpContent">
+              {popUpContent.map((pop) => {
+                return (
+                  <div className="popUpCard">
+                    <p>Nombre: {pop.title}</p>
+                    <p>Precio:{pop.price}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="popUpFooter">
+              <Button variant="contained" onClick={changeContent}>
+                Cerrar
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
-  )
-}
+  );
+};
 
-export default Category
+export default Category;
