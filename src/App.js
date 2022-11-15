@@ -1,7 +1,6 @@
 import "./App.css";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   BrowserRouter,
 } from "react-router-dom";
@@ -16,14 +15,12 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <Nav></Nav>
         <Router>
-          <Nav></Nav>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/productos" exact component={Search} />
-            <Route path="/faq" exact component={Faq} />
-            <Route path="/login" exact component={Login} />
-          </Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/productos" exact component={Search} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/faq" exact component={Faq} />
         </Router>
       </BrowserRouter>
       <Footer />

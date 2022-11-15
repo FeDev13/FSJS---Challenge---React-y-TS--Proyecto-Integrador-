@@ -7,13 +7,16 @@ const Slideshow = () => {
       <div className="container">
         <div className="row">
           <div className="col">
-            <h4 className="title">Los mas pedidos</h4>
+            <h4 className="title" color="black">
+              Los mas pedidos
+            </h4>
           </div>
         </div>
         <div className="row">
           <div className="col">
             <div className="cards">
               {Categories.map((values) => {
+                // filtra por propiedad rating del producto y lo verifica con if
                 const { id, title, price, image, rating } = values;
                 if (rating >= 4) {
                   return (

@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <MDBFooter className="text-center" color="white" backgroundcolor="dark">
+    <MDBFooter className="text-center footer" color="white">
       <MDBContainer className="p-4">
         <section className="mb-4">
           <MDBBtn
@@ -135,9 +135,7 @@ export default function Footer() {
 
       <div className="text-center p-3" style={{ backgroundColor: "black" }}>
         © 2020 Copyright:
-        <a className="text-white" href="https://mdbootstrap.com/">
-          MDBootstrap.com
-        </a>
+        <a className="text-white" href="https://mdbootstrap.com/"></a>
       </div>
     </MDBFooter>
   );

@@ -3,6 +3,7 @@ import "./Nav.css";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { grey } from "@mui/material/colors";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,22 +19,45 @@ const Navbar = () => {
       </span>
       <div className={`nav-items ${isOpen && "open"}`}>
         <div className="cart">
-          <ShoppingCartIcon color="primary" />
+          <ShoppingCartIcon color="white" />
         </div>
         <Link to="/">
-          <Button className="btn" variant="contained">
+          <Button
+            className="btn"
+            variant="contained"
+            sx={{
+              borderRadius: 30,
+              backgroundColor: "#ff661a",
+            }}
+          >
             Home
           </Button>
         </Link>
 
         <Link to="/productos">
-          <Button className="btn" variant="contained">
+          <Button
+            className="btn"
+            variant="contained"
+            sx={{
+              borderRadius: 30,
+              backgroundColor: "#ff661a",
+            }}
+          >
             Catalogo
           </Button>
         </Link>
-        <Button className="btn" variant="contained">
-          Login
-        </Button>
+        <Link to="/login">
+          <Button
+            className="btn"
+            variant="contained"
+            sx={{
+              borderRadius: 30,
+              backgroundColor: "#ff661a",
+            }}
+          >
+            Login
+          </Button>
+        </Link>
       </div>
       <div
         className={`nav-toggle ${isOpen && "open"}`}

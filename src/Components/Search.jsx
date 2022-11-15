@@ -8,11 +8,12 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 const Search = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [popUpContent, setPopUpContent] = useState([]);
-  const [popupToggle, setPopUpToggle] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(""); //useState setea el imput del search en vacio
+  const [popUpContent, setPopUpContent] = useState([]); //setea el modal en vacio
+  const [popupToggle, setPopUpToggle] = useState(false); //setea el modal en invisible
 
   const changeContent = (guitar) => {
+    //funcion que toma el array vacio creado por setPopUpContent y lo pasa como argumento para abrir el modal
     setPopUpContent([guitar]);
     setPopUpToggle(!popupToggle);
   };
@@ -30,25 +31,24 @@ const Search = () => {
             }}
           />
         </div>
+
         <div className="template_Container">
           {Categories.filter((val) => {
+            //filtra el array, si searchTerm esta vacio muestra todos las cards
             if (searchTerm === "") {
               return val;
             } else if (
-              val.title.toLowerCase().includes(searchTerm.toLowerCase())
+              //sino, busca si el titulo esta dentro de lo que se escribio en el input
+              val.title.toLowerCase().includes(searchTerm)
             ) {
               return val;
             }
           }).map((val) => {
+            //map sobre el array y crea las cards
             const { title, price, image, details } = val;
             return (
               <Card className="muicard">
-                <CardMedia
-                  component="img"
-                  alt="green iguana"
-                  height="140"
-                  image={image}
-                />
+                <CardMedia component="img" alt="" height="250" image={image} />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
                     {title}
@@ -62,18 +62,30 @@ const Search = () => {
                 <CardActions className="muicontent">
                   <Button
                     variant="contained"
-                    onClick={() => changeContent(val)}
+                    sx={{
+                      borderRadius: 30,
+                      backgroundColor: "black",
+                    }}
+                    onClick={() => changeContent(val)} //aca se pasa la funcion con callback que usa el seteo del array en el modal
                   >
                     Detalles
                   </Button>
-                  <Button variant="contained">Comprar</Button>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      borderRadius: 30,
+                      backgroundColor: "black",
+                    }}
+                  >
+                    Comprar
+                  </Button>
                 </CardActions>
               </Card>
             );
           })}
         </div>
       </div>
-      {popupToggle && (
+      {popupToggle && ( //modal que se cierra si elclick es adentro o en el boton
         <div className="popUpContainer" onClick={changeContent}>
           <div className="popUpBody">
             <div className="popUpContent"></div>
