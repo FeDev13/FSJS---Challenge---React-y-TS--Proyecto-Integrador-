@@ -1,4 +1,4 @@
-const Categories = [
+const list = [
   {
     id: 1,
     category: "Electrica",
@@ -74,5 +74,4 @@ const Categories = [
       "Con esta Telecaster tocá las mejores canciones de country y rock. Cuenta con dos pastillas que tienen un diseño casi microfónico y le permiten captar con riqueza todos los matices y armónicos. Es un instrumento de gran carácter, efectivo y eficaz. Sin dudas, su mayor referente es Keith Richards, de los Rolling Stones, por lo que muchos la asocian al estilo Stone.",
   },
 ];
-
-export default Categories;
+export default list;

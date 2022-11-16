@@ -1,31 +1,32 @@
 import "./App.css";
+
+import React, { useState } from "react";
+import Navbar from "./Components/NavBar";
+import Amazon from "./Components/Amazon";
+import Cart from "./Components/Cart";
+import "./styles/amazon.css";
+import Footer from "./Components/Footer";
 import {
   BrowserRouter as Router,
   Route,
   BrowserRouter,
 } from "react-router-dom";
-import Home from "./Pages/Home";
-import Footer from "./Components/Footer";
-import Nav from "./Components/Nav";
-import Faq from "./Pages/Faq";
-import Search from "./Components/Search";
-import Login from "./Components/Login";
+import Faq from "./Components/Faq";
+import Products from "./Components/Products";
 
-function App() {
+const App = () => {
   return (
-    <div>
+    <>
+      <Navbar />
       <BrowserRouter>
-        <Nav></Nav>
         <Router>
-          <Route path="/" exact component={Home} />
-          <Route path="/productos" exact component={Search} />
-          <Route path="/login" exact component={Login} />
+          <Route path="/products" exact component={Products} />
           <Route path="/faq" exact component={Faq} />
         </Router>
       </BrowserRouter>
       <Footer />
-    </div>
+    </>
   );
-}
+};
 
 export default App;
