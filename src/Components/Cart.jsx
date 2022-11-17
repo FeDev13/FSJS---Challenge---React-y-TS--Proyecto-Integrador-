@@ -3,24 +3,25 @@ import { useEffect } from "react";
 import "../styles/cart.css";
 
 const Cart = ({ cart, setCart, handleChange }) => {
-  const [price, setPrice] = useState(0);
+  //se pasan props
+  const [price, setPrice] = useState(0); //setea el precio en cero
 
-  const handlePrice = () => {
+  /* const handlePrice = () => {
     let ans = 0;
     cart.map((item) => (ans += item.amount * item.price));
     setPrice(ans);
   };
-
+ */
   const handleRemove = (id) => {
     const arr = cart.filter((item) => item.id !== id);
     setCart(arr);
-    // handlePrice();
+    /*   handlePrice(); */
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     handlePrice();
   });
-
+ */
   return (
     <article>
       {cart?.map((item) => (
@@ -36,13 +37,13 @@ const Cart = ({ cart, setCart, handleChange }) => {
           </div>
           <div>
             <span>{item.price}</span>
-            <button onClick={() => handleRemove(item.id)}>Remove</button>
+            <button onClick={() => handleRemove(item.id)}>Quitar</button>
           </div>
         </div>
       ))}
       <div className="total">
         <span>Total </span>
-        <span>Rs - {price}</span>
+        <span>$ - {price}</span>
       </div>
     </article>
   );

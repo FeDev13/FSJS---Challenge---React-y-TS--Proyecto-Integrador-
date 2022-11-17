@@ -1,9 +1,5 @@
 import "./App.css";
 
-import React, { useState } from "react";
-import Navbar from "./Components/NavBar";
-import Amazon from "./Components/Amazon";
-import Cart from "./Components/Cart";
 import "./styles/amazon.css";
 import Footer from "./Components/Footer";
 import {
@@ -13,15 +9,18 @@ import {
 } from "react-router-dom";
 import Faq from "./Components/Faq";
 import Products from "./Components/Products";
+import Home from "./Components/Home";
+import Login from "./Components/Login";
 
 const App = () => {
   return (
     <>
-      <Navbar />
       <BrowserRouter>
         <Router>
+          <Route path="/" exact component={Home} />
           <Route path="/products" exact component={Products} />
           <Route path="/faq" exact component={Faq} />
+          <Route path="/login" exact component={Login} />
         </Router>
       </BrowserRouter>
       <Footer />

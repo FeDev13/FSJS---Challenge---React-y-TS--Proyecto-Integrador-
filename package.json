@@ -13,6 +13,8 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.24.2",
     "bootstrap": "^5.2.2",
+    "daisyui": "^2.41.0",
+    "gapi-script": "^1.2.0",
     "mdb-react-ui-kit": "^5.0.0",
     "mdb-ui-kit": "^6.0.0",
     "react": "^18.2.0",

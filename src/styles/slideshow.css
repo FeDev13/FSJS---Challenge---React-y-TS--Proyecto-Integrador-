@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h4{
+    margin: 2rem;
+    color: black;
+}
+.container1 {
+    display: flex;
+}
+.cards1 {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: black;
+}
+.faq {
+    background-color: black;
+    color: white;
+    margin-left: 5rem;
+    border-radius: 5px;
+    padding: 10px;
+}

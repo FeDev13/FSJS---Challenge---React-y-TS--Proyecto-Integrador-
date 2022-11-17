@@ -5,7 +5,6 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import Nav from "./Nav";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -52,7 +51,6 @@ export default function Faq() {
 
   return (
     <div>
-      <Nav />
       <div>
         <h1 className="faq1">Preguntas Frequentes (FAQ)</h1>
       </div>

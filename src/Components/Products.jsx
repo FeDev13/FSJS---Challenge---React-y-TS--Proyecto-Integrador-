@@ -2,12 +2,12 @@ import React from "react";
 import Navbar from "./NavBar";
 import { useState } from "react";
 import Cart from "./Cart";
-import Amazon from "./Amazon";
+import ProdArray from "./ProdArray";
 
 const Products = () => {
   const [show, setShow] = useState(true);
   const [cart, setCart] = useState([]);
-  const [warning, setWarning] = useState(false);
+  const [alert, setAlert] = useState(false);
 
   const handleClick = (item) => {
     let isPresent = false;
@@ -15,9 +15,9 @@ const Products = () => {
       if (item.id === product.id) isPresent = true;
     });
     if (isPresent) {
-      setWarning(true);
+      setAlert(true);
       setTimeout(() => {
-        setWarning(false);
+        setAlert(false);
       }, 2000);
       return;
     }
@@ -40,11 +40,11 @@ const Products = () => {
     <>
       <Navbar size={cart.length} setShow={setShow} />
       {show ? (
-        <Amazon handleClick={handleClick} />
+        <ProdArray handleClick={handleClick} />
       ) : (
         <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
       )}
-      {warning && <div className="warning">El producto ya esta agregado</div>}
+      {alert && <div className="warning">El producto ya esta agregado</div>}
     </>
   );
 };

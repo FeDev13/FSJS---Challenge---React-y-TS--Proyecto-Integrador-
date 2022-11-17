@@ -3,7 +3,7 @@ import list from "../data";
 import "../styles/amazon.css";
 import Cards from "./Cards";
 
-const Amazon = ({ handleClick }) => {
+const ProdArray = ({ handleClick }) => {
   return (
     <section>
       {list.map((item) => (
@@ -13,4 +13,4 @@ const Amazon = ({ handleClick }) => {
   );
 };
 
-export default Amazon;
+export default ProdArray;
