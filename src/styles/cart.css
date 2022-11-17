@@ -67,3 +67,10 @@ article{
     color: black;
     font-weight: bold;
 }
+.comprar {
+    background-color: green;
+    padding: 5px;
+    border-radius: 5px;
+    height: 100%;
+    color: white;
+}

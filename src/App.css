@@ -9,7 +9,7 @@
 }
 
 .row:nth-child(2) {
-  display: flex;
+  display: grid;
 }
 
 .row:nth-child(2) .col {

@@ -3,7 +3,7 @@ import "../styles/search.css";
 import list from "../data";
 import { useState } from "react";
 
-const Search = () => {
+const Search = (item, handleClick) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
@@ -14,7 +14,7 @@ const Search = () => {
             className="input"
             id="searchInput"
             type="text"
-            placeholder="Search here..."
+            placeholder="Buscar"
             onChange={(event) => {
               setSearchTerm(event.target.value);
             }}
@@ -23,10 +23,10 @@ const Search = () => {
         <div className="template_Container">
           {list
             .filter((val) => {
-              if (searchTerm == "") {
+              if (searchTerm === "") {
                 return val;
               } else if (
-                val.title.toLowerCase().includes(searchTerm.toLowerCase())
+                val.title.toLowerCase().includes(searchTerm.toLowerCase()) //poner .map antes del return
               ) {
                 return val;
               }
@@ -36,7 +36,7 @@ const Search = () => {
                 <div className="template" key={val.id}>
                   <img src={val.image} alt="" />
                   <h3>{val.title}</h3>
-                  <p className="price">${val.price}</p>
+                  <button className="detail">Detalles</button>
                 </div>
               );
             })}

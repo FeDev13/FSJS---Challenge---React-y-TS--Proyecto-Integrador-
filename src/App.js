@@ -11,6 +11,7 @@ import Faq from "./Components/Faq";
 import Products from "./Components/Products";
 import Home from "./Components/Home";
 import Login from "./Components/Login";
+import CreditCardForm from "./Components/CreditCardForm";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/products" exact component={Products} />
           <Route path="/faq" exact component={Faq} />
           <Route path="/login" exact component={Login} />
+          <Route path="/compra" exact component={CreditCardForm} />
         </Router>
       </BrowserRouter>
       <Footer />

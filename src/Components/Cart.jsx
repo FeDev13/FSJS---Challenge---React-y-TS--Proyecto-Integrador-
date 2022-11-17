@@ -1,27 +1,28 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import "../styles/cart.css";
+import { NavLink } from "react-router-dom";
 
 const Cart = ({ cart, setCart, handleChange }) => {
   //se pasan props
   const [price, setPrice] = useState(0); //setea el precio en cero
 
-  /* const handlePrice = () => {
+  const handlePrice = () => {
     let ans = 0;
     cart.map((item) => (ans += item.amount * item.price));
     setPrice(ans);
   };
- */
+
   const handleRemove = (id) => {
     const arr = cart.filter((item) => item.id !== id);
     setCart(arr);
-    /*   handlePrice(); */
+    handlePrice();
   };
 
-  /* useEffect(() => {
+  useEffect(() => {
     handlePrice();
   });
- */
+
   return (
     <article>
       {cart?.map((item) => (
@@ -43,7 +44,10 @@ const Cart = ({ cart, setCart, handleChange }) => {
       ))}
       <div className="total">
         <span>Total </span>
-        <span>$ - {price}</span>
+        <span>$ {price}</span>
+        <NavLink to="/compra">
+          <button className="comprar">Finalizar compra</button>
+        </NavLink>
       </div>
     </article>
   );

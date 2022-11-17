@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "../styles/navbar.css";
 import { NavLink } from "react-router-dom";
 
@@ -16,13 +15,13 @@ const Navbar = ({ size, setShow }) => {
             </span>
             <span>{size}</span>
             <NavLink to="/login">
-              <button className="btn">login</button>
+              <button className="botones">login</button>
             </NavLink>
             <NavLink to="/products">
-              <button className="btn">Productos</button>
+              <button className="botones">Productos</button>
             </NavLink>
             <NavLink to="/">
-              <button className="btn">home</button>
+              <button className="botones">home</button>
             </NavLink>
           </div>
         </div>

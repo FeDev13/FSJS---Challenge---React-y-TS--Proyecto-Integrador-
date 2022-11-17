@@ -23,7 +23,7 @@ const Slideshow = () => {
               {list.map((values) => {
                 // filtra por propiedad rating del producto y lo verifica con if
                 const { id, title, price, image, rating } = values;
-                if (rating >= 4) {
+                if (rating >= 5) {
                   return (
                     <>
                       <div className="card" key={id}>
