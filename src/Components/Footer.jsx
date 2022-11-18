@@ -5,8 +5,6 @@ import "../styles/footer.css";
 function Footer() {
   return (
     <section className="footer">
-      <hr className="footer-seperator" />
-
       <section className="footer-info">
         <section className="footer-info-left">
           <section className="footer-info__name">Registrarse</section>
@@ -31,7 +29,6 @@ function Footer() {
           </section>
         </section>
       </section>
-      <hr className="footer-seperator" />
     </section>
   );
 }

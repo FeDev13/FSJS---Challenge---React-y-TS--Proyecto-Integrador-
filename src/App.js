@@ -4,6 +4,7 @@ import "./styles/amazon.css";
 import Footer from "./Components/Footer";
 import {
   BrowserRouter as Router,
+  Routes,
   Route,
   BrowserRouter,
 } from "react-router-dom";
@@ -17,13 +18,13 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Router>
-          <Route path="/" exact component={Home} />
-          <Route path="/products" exact component={Products} />
-          <Route path="/faq" exact component={Faq} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/compra" exact component={CreditCardForm} />
-        </Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/compra" element={<CreditCardForm />} />
+        </Routes>
       </BrowserRouter>
       <Footer />
     </>

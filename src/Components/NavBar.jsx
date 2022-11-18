@@ -2,6 +2,7 @@ import "../styles/navbar.css";
 import { NavLink } from "react-router-dom";
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
 
 const Navbar = ({ size, setShow }) => {
   const navRef = useRef();
@@ -16,7 +17,7 @@ const Navbar = ({ size, setShow }) => {
         <nav ref={navRef}>
           <div className="cart" onClick={() => setShow(false)}>
             <span>
-              <i className="fas fa-cart-plus"></i>
+              <LocalMallIcon />
             </span>
             <span>{size}</span>
           </div>
