@@ -8,16 +8,18 @@ h4{
     margin: 4rem;
     color: black;
 }
-.container1 {
-    margin-top: 3rem;
-    display: flex;
-}
+
 .cards1 {
     margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     color: black;
 }
+@media (max-width: 715px) {
+    .cards1 {
+      flex-direction: column;
+    }
+  }
+
 .faq {
     background-color: black;
     color: white;
@@ -25,4 +27,7 @@ h4{
     border-radius: 5px;
     padding: 10px;
     border-top: 3rem;
+}
+.row {
+    display: flex;
 }
