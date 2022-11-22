@@ -23,13 +23,28 @@ const Navbar = ({ size, setShow }) => {
           </div>
 
           <NavLink to="/login">
-            <button className="botones">Login</button>
+            <button
+              class="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
+              id="boton"
+            >
+              Login
+            </button>
           </NavLink>
           <NavLink to="/products">
-            <button className="botones">Comprar</button>
+            <button
+              class="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
+              id="boton"
+            >
+              Comprar
+            </button>
           </NavLink>
           <NavLink to="/">
-            <button className="botones">Home</button>
+            <button
+              class="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
+              id="boton"
+            >
+              Home
+            </button>
           </NavLink>
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />

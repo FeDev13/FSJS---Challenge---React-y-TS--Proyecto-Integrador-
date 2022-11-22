@@ -1,7 +1,7 @@
 import "./App.css";
 
 import "./styles/amazon.css";
-import Footer from "./Components/Footer";
+import Footer from "./Pages/Footer/Footer.js";
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,6 +13,7 @@ import Products from "./Components/Products";
 import Home from "./Components/Home";
 import Login from "./Components/Login";
 import CreditCardForm from "./Components/CreditCardForm";
+import Search from "./Components/Search";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/faq" element={<Faq />} />
           <Route path="/login" element={<Login />} />
           <Route path="/compra" element={<CreditCardForm />} />
+          <Route path="/Search/:filter" element={<Search />} />
         </Routes>
       </BrowserRouter>
       <Footer />

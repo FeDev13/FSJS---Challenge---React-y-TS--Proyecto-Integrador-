@@ -24,21 +24,35 @@ const Search = (item, handleClick) => {
           {list
             .filter((val) => {
               if (searchTerm === "") {
-                return val;
+                return (
+                  <>
+                    <h3>No se han encontrado productos</h3>
+                  </>
+                );
               } else if (
                 val.title.toLowerCase().includes(searchTerm.toLowerCase()) //poner .map antes del return
               ) {
-                return val;
+                return (
+                  <div className="template" key={val.id}>
+                    <img src={val.image} alt="" />
+                    <h3>{val.title}</h3>
+                    <button className="detail">Detalles</button>
+                  </div>
+                );
               }
             })
             .map((val) => {
-              return (
-                <div className="template" key={val.id}>
-                  <img src={val.image} alt="" />
-                  <h3>{val.title}</h3>
-                  <button className="detail">Detalles</button>
-                </div>
-              );
+              if (searchTerm === "") {
+                return <></>;
+              } else {
+                return (
+                  <div className="template" key={val.id}>
+                    <img src={val.image} alt="" />
+                    <h3>{val.title}</h3>
+                    <button className="detail">Detalles</button>
+                  </div>
+                );
+              }
             })}
         </div>
       </div>

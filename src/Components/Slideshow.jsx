@@ -37,7 +37,6 @@ const Slideshow = () => {
           }
         })}
       </div>
-      y
     </>
   );
 };
