@@ -14,6 +14,7 @@ import Home from "./Components/Home";
 import Login from "./Components/Login";
 import CreditCardForm from "./Components/CreditCardForm";
 import Search from "./Components/Search";
+import FormPostGuitar from "./Components/FormPostGuitar";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/faq" element={<Faq />} />
           <Route path="/login" element={<Login />} />
           <Route path="/compra" element={<CreditCardForm />} />
+          <Route path="/dashboard" element={<FormPostGuitar />} />
           <Route path="/Search/:filter" element={<Search />} />
         </Routes>
       </BrowserRouter>

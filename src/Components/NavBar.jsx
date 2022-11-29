@@ -49,6 +49,14 @@ const Navbar = ({ size, setShow }) => {
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />
           </button>
+          <NavLink to="/dashboard">
+            <button
+              class="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
+              id="boton"
+            >
+              Subir producto
+            </button>
+          </NavLink>
         </nav>
         <button className="nav-btn" onClick={showNavbar}>
           <FaBars />
