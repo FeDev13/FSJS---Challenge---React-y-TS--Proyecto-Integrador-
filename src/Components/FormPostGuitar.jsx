@@ -38,7 +38,12 @@ const FormPostGuitar = () => {
         <h1 className="text-3xl font-semibold text-center text-black-700 uppercase">
           Subir Producto
         </h1>
-        <form className="mt-6" onSubmit={(e) => submit(e)}>
+        <form
+          className="mt-6"
+          onSubmit={(e) => submit(e)}
+          method="POST"
+          encType="multipart/form-data"
+        >
           <div className="mb-2">
             <label>
               <span className="text-gray-700">nombre</span>
@@ -125,7 +130,7 @@ const FormPostGuitar = () => {
                 onChange={(e) => handle(e)}
                 id="imagen"
                 value={info.imagen}
-                type="text"
+                type="file"
                 className="
             block
             text-white
