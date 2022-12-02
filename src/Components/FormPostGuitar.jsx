@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import Axios from "axios";
 import { useState } from "react";
 
 const FormPostGuitar = () => {
@@ -13,16 +13,14 @@ const FormPostGuitar = () => {
 
   function submit(e) {
     e.preventDefault();
-    axios
-      .post(url, {
-        nombre: info.nombre,
-        descripcion: info.descripcion,
-        cantidad: parseInt(info.cantidad),
-        imagen: info.imagen,
-      })
-      .then((response) => {
-        console.log(response.info);
-      });
+    Axios.post(url, {
+      nombre: info.nombre,
+      descripcion: info.descripcion,
+      cantidad: parseInt(info.cantidad),
+      imagen: info.imagen,
+    }).then((response) => {
+      console.log(response);
+    });
   }
 
   function handle(e) {
@@ -124,7 +122,6 @@ const FormPostGuitar = () => {
           </div>
           <div className="mb-2">
             <label>
-              <span className="text-gray-700">imagen</span>
               <input
                 name="imagen"
                 onChange={(e) => handle(e)}
@@ -133,7 +130,7 @@ const FormPostGuitar = () => {
                 type="file"
                 className="
             block
-            text-white
+            text-black
             w-full
             mt-2 px-16 py-2
             border-gray-300

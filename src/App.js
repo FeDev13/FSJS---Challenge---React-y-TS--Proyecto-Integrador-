@@ -15,6 +15,7 @@ import Login from "./Components/Login";
 import CreditCardForm from "./Components/CreditCardForm";
 import Search from "./Components/Search";
 import FormPostGuitar from "./Components/FormPostGuitar";
+import { Register } from "./Components/Register";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/compra" element={<CreditCardForm />} />
           <Route path="/dashboard" element={<FormPostGuitar />} />
           <Route path="/Search/:filter" element={<Search />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
       <Footer />
