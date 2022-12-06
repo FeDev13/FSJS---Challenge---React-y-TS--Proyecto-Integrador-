@@ -24,7 +24,7 @@ const Navbar = ({ size, setShow }) => {
 
           <NavLink to="/login">
             <button
-              class="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
               id="boton"
             >
               Login
@@ -32,7 +32,7 @@ const Navbar = ({ size, setShow }) => {
           </NavLink>
           <NavLink to="/products">
             <button
-              class="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
               id="boton"
             >
               Comprar
@@ -40,7 +40,7 @@ const Navbar = ({ size, setShow }) => {
           </NavLink>
           <NavLink to="/">
             <button
-              class="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
               id="boton"
             >
               Home
@@ -51,7 +51,7 @@ const Navbar = ({ size, setShow }) => {
           </button>
           <NavLink to="/register">
             <button
-              class="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
               id="boton"
             >
               Registrarse

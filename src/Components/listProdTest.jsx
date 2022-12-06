@@ -1,67 +1,48 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Button } from "@material-tailwind/react";
 import Navbar from "./NavBar";
+import { ShopCartContext } from "../Contexts/Context";
+import Axios from "axios";
+import listprodtest from "../styles/listprodtest.css";
 
 const ListProdTest = () => {
-  const url = "http://localhost:3001/productos/guitarras";
-
-  const [prod, setProd] = useState([]);
-
+  const [data, setdata] = useState([]);
+  const fetchData = async () => {
+    const response = await Axios.get(
+      "http://localhost:3001/productos/guitarras"
+    );
+    setdata(response.data);
+    console.log(data);
+  };
   useEffect(() => {
-    getProd();
+    fetchData();
   }, []);
-
-  function getProd() {
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((response) => {
-        console.log(response);
-        setProd(response);
-      });
-  }
+  const Globalstate = useContext(ShopCartContext);
+  const dispatch = Globalstate.dispatch;
+  console.log(Globalstate);
   return (
     <>
       <Navbar />
-      <div>
-        <div className="bg-white">
-          <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-              Catalogo
-            </h2>
-
-            <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-              {prod.map((product) => (
-                <div key={product.id} className="group relative">
-                  <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                    <img
-                      src={product.imagen}
-                      alt={product.imageAlt}
-                      className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                    />
-                  </div>
-                  <div className="mt-4 flex justify-between">
-                    <div>
-                      <h2 className="text-lg text-gray-700">
-                        <a href={product.href}>
-                          <span
-                            aria-hidden="true"
-                            className="absolute inset-0"
-                          />
-                          {product.nombre}
-                        </a>
-                      </h2>
-                      <p> Precio $ {product.precio}</p>
-                    </div>
-                    <Button variant="filled" color="amber">
-                      Comprar
-                    </Button>
-                  </div>
-                </div>
-              ))}
+      <h1>Nuestro catalogo</h1>
+      <div className="home">
+        {data.map((item, index) => {
+          item.quantity = 1;
+          return (
+            <div className="card" key={index}>
+              <img src={item.imagen} alt="" />
+              <p>{item.nombre}</p>
+              <h3>$. {item.precio}</h3>
+              <Button
+                variant="filled"
+                color="amber"
+                onClick={() => dispatch({ type: "ADD", payload: item })}
+              >
+                Agregar al carrito
+              </Button>
             </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </>
   );

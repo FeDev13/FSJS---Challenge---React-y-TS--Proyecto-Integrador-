@@ -1,0 +1,9 @@
+.home {
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    margin-top: 3rem;
+}
+.card {
+    height: 100%;
+    width: auto;
+}
