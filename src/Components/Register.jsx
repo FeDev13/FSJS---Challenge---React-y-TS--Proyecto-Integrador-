@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import Axios from "axios";
 import NavBar from "./NavBar";
 import { useNavigate } from "react-router-dom";
@@ -19,10 +18,6 @@ export const Register = () => {
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
-  useEffect(() => {
-    mostrarError();
-    mostrarAlert();
-  }, []);
 
   const mostrarError = () => {
     Swal.fire({ icon: "error", title: "Oops...", text: "Algo salio mal!" });

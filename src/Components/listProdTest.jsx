@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react";
 import { useState } from "react";
-import { Button } from "@material-tailwind/react";
 import Navbar from "./NavBar";
 import { CartContext } from "../Contexts/Context";
 import Axios from "axios";
@@ -19,15 +18,14 @@ const ListProdTest = () => {
   };
   useEffect(() => {
     fetchData();
-    mostrarCompra();
   }, []);
 
-  const mostrarCompra = () => {
-    Swal.fire({ icon: "warning", title: "Producto agregado" });
-  };
   const Globalstate = useContext(CartContext);
   const dispatch = Globalstate.dispatch;
   console.log(Globalstate);
+  const mostrarCompra = () => {
+    Swal.fire({ icon: "warning", title: "Producto agregado" });
+  };
   return (
     <>
       <Navbar />

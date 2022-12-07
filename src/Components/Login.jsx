@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/login.css";
 import Navbar from "./NavBar";
 import { useState } from "react";
-import { useEffect } from "react";
 import Axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -11,11 +10,6 @@ export default function Login() {
   const [data, setData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    mostrarError();
-    mostrarAlert();
-  }, []);
-
   const mostrarError = () => {
     Swal.fire({ icon: "error", title: "Oops...", text: "Algo salio mal!" });
   };
@@ -23,7 +17,7 @@ export default function Login() {
     Swal.fire({
       icon: "success",
       title: "Bienvenido",
-      timer: 1500,
+      timer: 3000,
     });
   };
 
