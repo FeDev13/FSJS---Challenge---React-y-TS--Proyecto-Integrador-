@@ -4,6 +4,10 @@
     margin-top: 3rem;
 }
 .card {
-    height: 100%;
-    width: auto;
+    height: 90%;
+    width: 50%;
+    margin-top: 2rem;
+}
+h1{
+    text-align: center;
 }

@@ -2,7 +2,6 @@ import "../styles/navbar.css";
 import { NavLink } from "react-router-dom";
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import LocalMallIcon from "@mui/icons-material/LocalMall";
 
 const Navbar = ({ size, setShow }) => {
   const navRef = useRef();
@@ -15,13 +14,14 @@ const Navbar = ({ size, setShow }) => {
       <header>
         <h1>Guitar Shop</h1>
         <nav ref={navRef}>
-          <div className="cart" onClick={() => setShow(false)}>
-            <span>
-              <LocalMallIcon />
-            </span>
-            <span>{size}</span>
-          </div>
-
+          <NavLink to="/cart">
+            <button
+              className="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
+              id="boton"
+            >
+              Carrito
+            </button>
+          </NavLink>
           <NavLink to="/login">
             <button
               className="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"

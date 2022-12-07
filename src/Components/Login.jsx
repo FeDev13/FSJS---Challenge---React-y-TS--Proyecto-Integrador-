@@ -2,11 +2,30 @@ import React from "react";
 import "../styles/login.css";
 import Navbar from "./NavBar";
 import { useState } from "react";
+import { useEffect } from "react";
 import Axios from "axios";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export default function Login() {
   const [data, setData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    mostrarError();
+    mostrarAlert();
+  }, []);
+
+  const mostrarError = () => {
+    Swal.fire({ icon: "error", title: "Oops...", text: "Algo salio mal!" });
+  };
+  const mostrarAlert = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Bienvenido",
+      timer: 1500,
+    });
+  };
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -18,6 +37,7 @@ export default function Login() {
       const url = "http://localhost:3001/auth/login";
       const { data: res } = await Axios.post(url, data);
       localStorage.setItem("token", res.data);
+      mostrarAlert();
       window.location = "/";
     } catch (error) {
       if (
@@ -25,7 +45,7 @@ export default function Login() {
         error.response.status >= 400 &&
         error.response.status <= 500
       ) {
-        setError(error.response.data.message);
+        mostrarError();
       }
     }
   };

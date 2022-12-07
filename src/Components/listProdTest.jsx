@@ -2,9 +2,11 @@ import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Button } from "@material-tailwind/react";
 import Navbar from "./NavBar";
-import { ShopCartContext } from "../Contexts/Context";
+import { CartContext } from "../Contexts/Context";
 import Axios from "axios";
 import listprodtest from "../styles/listprodtest.css";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const ListProdTest = () => {
   const [data, setdata] = useState([]);
@@ -17,8 +19,13 @@ const ListProdTest = () => {
   };
   useEffect(() => {
     fetchData();
+    mostrarCompra();
   }, []);
-  const Globalstate = useContext(ShopCartContext);
+
+  const mostrarCompra = () => {
+    Swal.fire({ icon: "warning", title: "Producto agregado" });
+  };
+  const Globalstate = useContext(CartContext);
   const dispatch = Globalstate.dispatch;
   console.log(Globalstate);
   return (
@@ -33,13 +40,13 @@ const ListProdTest = () => {
               <img src={item.imagen} alt="" />
               <p>{item.nombre}</p>
               <h3>$. {item.precio}</h3>
-              <Button
-                variant="filled"
-                color="amber"
+              <button
+                className="bg-orange-600 hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
                 onClick={() => dispatch({ type: "ADD", payload: item })}
               >
+                {mostrarCompra()}
                 Agregar al carrito
-              </Button>
+              </button>
             </div>
           );
         })}

@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import Axios from "axios";
 import NavBar from "./NavBar";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export const Register = () => {
   const [data, setData] = useState({
@@ -16,6 +19,21 @@ export const Register = () => {
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
+  useEffect(() => {
+    mostrarError();
+    mostrarAlert();
+  }, []);
+
+  const mostrarError = () => {
+    Swal.fire({ icon: "error", title: "Oops...", text: "Algo salio mal!" });
+  };
+  const mostrarAlert = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Usuario registrado con exito",
+      text: "Bienvenido!",
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,14 +41,14 @@ export const Register = () => {
       const url = "http://localhost:3001/users/user";
       const { data: res } = await Axios.post(url, data);
       navigate("/login");
-      console.log(res.message);
+      mostrarAlert();
     } catch (error) {
       if (
         error.response &&
         error.response.status >= 400 &&
         error.response.status <= 500
       ) {
-        setError(error.response.data.message);
+        mostrarError();
       }
     }
   };
